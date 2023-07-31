@@ -168,9 +168,12 @@ function skorTabelasi(periyotSkoru, takimSkoru, ceyrekSayisi) {
     KonukTakim += periyot.KonukTakim;
   }
 
-  if (EvSahibi === KonukTakim) {
-    let uzatma = `Uzatma 1: Ev Sahibi ${periyot.EvSahibi} - Konuk Takım ${periyot.KonukTakim}`;
+  while (EvSahibi === KonukTakim) {
+    let uzatmaSayisi = 1;
+    let periyot = periyotSkoru(takimSkoru);
+    let uzatma = `Uzatma ${uzatmaSayisi}: Ev Sahibi ${periyot.EvSahibi} - Konuk Takım ${periyot.KonukTakim}`;
     macSonucu.push(uzatma);
+    uzatmaSayisi++;
   }
   macSonucu.push(
     `Maç Sonucu: Ev Sahibi ${EvSahibi} - Konuk Takım ${KonukTakim}`
